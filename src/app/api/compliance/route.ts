@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
             )
         }
 
-        const complianceEnable = true
+        const complianceEnable = process.env.ENABLE_COMPLIANCE_CHECK === 'true'
         if (!complianceEnable) {
             console.log('Compliance screening is disabled. Skipping API call.')
             return NextResponse.json({ result: 'Compliance screening is disabled', success: true, isApproved: true, data: { result: "APPROVED", message: "Compliance screening is disabled" } }, { status: 200 })
