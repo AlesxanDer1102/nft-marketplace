@@ -118,6 +118,7 @@ export default function BuyNftPage() {
         }
     }, [step, isPurchaseSuccess, router])
 
+
     // Check if the current user is the seller
     const isSeller = seller === address
 
